@@ -1,57 +1,13 @@
 \documentclass[conference,harvard,brazil,english]{sbatex}
 \usepackage[latin1]{inputenc}
 \usepackage{ae}
-%
-% LaTeX2e class SBATeX
-%
-% Versão 1.0 alpha
-%   Walter Fetter Lages
-%   w.fetter@ieee.org
-%
-% Este arquivo cba.tex é uma adaptação do arquivo revista.tex,
-% Versão: 1.0 alpha, desenvolvido por Maurício C. de Oliveira,
-% mcdeoliveira@ieee.org.
-%
-% As adaptações fazem com que, por default, sejam utilizadas
-% as opções adequadas para o formato do CBA ou SBAI, ao contrário do arquivo
-% revista.tex, que, por default, utiliza opções adequadas para o formato
-% da Revista da SBA.
-%
-%
-% --------------------------------------------------
-%
-% Para compilar este exemplo use a seqüência de comandos:
-%
-%     latex cba
-%     bibtex cba
-%     latex cba
-%     latex cba
-%
-% Para gerar um arquivo Postscript (.ps):
-%
-%     dvips -t a4 cba
-%
-% Para gerar um arquivo Portable Document Format (.pdf):
-%
-%     dvips -Ppdf -t a4 cba
-%     ps2pdf -dMaxSubsetPct=100 -dSubsetFonts=true -dEmbedAllFonts=true -dCompatibilityLevel=1.2 -sPAPERSIZE=a4 cba.ps
-%
 
-% --------------------------------------------------
-%  Estes comandos são necessários apenas para a
-%  a geração deste artigo exemplo. Eles não fazem
-%  parte do estilo SBATeX.
-% --------------------------------------------------
 \makeatletter
 \def\verbatim@font{\normalfont\ttfamily\footnotesize}
 \makeatother
 \usepackage{amsmath}
-% --------------------------------------------------
-
 
 \begin{document}
-
-% CABEÇALHO
 
 \title{Artigo Exemplo}
 
@@ -71,15 +27,6 @@
 
 \author[3]{Rafael Pires}{rafael@pires}
 
-% Com a opção 'journal' pode-se definir
-%\volume{X}
-%\numero{X}
-%\mes{Jan e Fev}
-%\ano{2010}
-% Caso contrário você verá um irritante aviso de
-% que estes valores não foram definidos.
-
-% \twocolumn apenas para conference
 \twocolumn[
 
 \maketitle
@@ -109,8 +56,6 @@
 
 \keywords{Exemplo, Ilustração.}
 ]
-
-% CONTRIBUIÇÃO
 
 \selectlanguage{brazil}
 
@@ -727,6 +672,5 @@ Como conclusão, concluem-se algumas conclusivas conclusões.
 \section*{Agradecimentos}
 Este trabalho contou com o apoio de todos aqueles que me apoiaram.
 
-% BIBLIOGRAFIA
 \bibliography{exemplo}
 \end{document}
