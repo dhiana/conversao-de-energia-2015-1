@@ -41,12 +41,83 @@ Primeiramente, os prinípios de tais máquinas são explicados e em seguida o proje
 
 Máquinas de Corrente Contínua (CC) podem ser utilizadas com dois propósitos:
 
-Motor: converte energia elétrica em energia mecânica.
-
-Gerador: converte energia mecânica em energia elétrica.
+\begin{description}
+\item[Motor:] converte energia elétrica em energia mecânica.
+\item[Gerador:] converte energia mecânica em energia elétrica.
+\end{description}
 
 Este trabalho apresenta o funcionamento de tais máquinas nestes dois modos.
-Adicionalmente, um controlador PID será projetado para controlar um motor CC.
+Adicionalmente, é projetado um controlador PID para um motor CC.
+
+\section{Modelo Teórico}
+
+A força eletromotriz é dada por:
+
+\begin{equation}
+E_a = k_{armadura} * \omega * \phi
+\end{equation}
+
+Sendo o fluxo de campo magnético dado por:
+
+\begin{equation}
+\phi = k_{campo} * I_f
+\end{equation}
+
+Equacionando as malhas do modelo teórico:
+
+\begin{equation}
+V_d = I_a * R_a + L_a * \frac{dI_a}{dt} + E_a
+\end{equation}
+
+\begin{equation}
+V_d = I_f * R_f + L_f * \frac{dI_f}{dt}
+\end{equation}
+
+Chega-se às correntes:
+
+\begin{equation}
+I_a(s) = \frac{V_d - E_a}{L_a * s + R_a}
+\end{equation}
+
+\begin{equation}
+I_f(s) = \frac{V_f}{L_f * s + R_f}
+\end{equation}
+
+O torque elétrico é dado por:
+
+\begin{equation}
+T_{eletrico} = k_{armadura} * \phi * I_a
+\end{equation}
+
+\begin{equation}
+T_{eletrico} = k_{armadura} * k_{campo} * I_f * I_a
+\end{equation}
+
+\begin{equation}
+T_{eletrico} = k * \frac{V_f}{R_f} * I_a
+\end{equation}
+
+E o torque mecânico é dado por:
+
+\begin{equation}
+T_{mecanico} = F \times R
+\end{equation}
+
+\begin{equation}
+T_{mecanico} = m * a * R
+\end{equation}
+
+Já o torque devido ao atrito é dado por:
+
+\begin{equation}
+T_{atrito} = -k_a * \omega
+\end{equation}
+
+Finalmente, o torque total é composto por:
+
+\begin{equation}
+T_{total} = T_{eletrico} + T_{atrito} - T_{mecanico}
+\end{equation}
 
 \section{Máquina de Corrente Contínua}
 
@@ -77,6 +148,18 @@ Texto
 Texto
 
 \subsection{Movimento com Aceleração em Rampa}
+
+Texto
+
+\subsection{Raio ótimo}
+
+Texto
+
+\subsection{Consumo de energia total}
+
+Texto
+
+\subsection{Sensores utilizados}
 
 Texto
 
