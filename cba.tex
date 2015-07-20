@@ -119,7 +119,50 @@ Finalmente, o torque total é composto por:
 T_{total} = T_{eletrico} + T_{atrito} - T_{mecanico}
 \end{equation}
 
+\newpage
+
 \section{Máquina de Corrente Contínua}
+
+\subsection{Parâmetros do Trabalho}
+
+Foi especificado para este trabalho uma variável Z valendo a média do último dígito do DRE dos autores ou 5, se esta média for nula.
+
+A média do DRE dos autores deste trabalho é 0,5, logo temos:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lll}
+Variável & Fórmula & Valor \\
+Z &  & 0,5 \\
+X & 10Z & 5 \\
+$ J/k_a $ & X s & 5 s \\
+Y & 2X m & 10 m \\
+T & Z s & 0,5 s
+\end{tabular}
+\caption{Parâmetros do Trabalho}
+\end{table}
+
+\subsection{Parâmetros do Motor}
+
+\begin{table}[h]
+\centering
+\scriptsize
+\begin{tabular}{ll}
+Potência na velocidade nominal [W] & 750 \\
+Velocidade de rotação nominal [rpm] & 3600 \\
+Tensão Nominal de Armadura [V] & 100 \\
+Corrente de armadura máxima [A] & $ I_{max} = 8 $ \\
+Resistência de Armadura [$\Omega$] & $ R_a = 0,2 $ \\
+Resistência de enrolamento [$\Omega$] & $ R_f = 10 $ \\
+Tensão de campo [V] & $ V_f = 10 $ \\
+Constante de tempo da armadura [ms] & $ L_a / R_a = 20 $ \\
+Constante de tempo do enrolamento [s] & $ \tau_f = L_f/R_f = 1 $ \\
+Constante de tempo [V/A(rad/s] & k = 0,265 \\
+Coeficiente de atrito [Nm/(rad/s)] & $ k_a = 0,8 \times10^{-3} $ \\
+Constante de tempo mecânica [s] & $ J/k_a = 5 $
+\end{tabular}
+\caption{Parâmetros do Motor}
+\end{table}
 
 \subsection{Estudo do Motor}
 
