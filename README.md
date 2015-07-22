@@ -8,9 +8,24 @@ Gerando PDF
 
 Este documento está escrito em LaTeX.
 
-Para gerar um pdf:
+Instalar os pacotes LaTeX.
+
+E para gerar um pdf:
 
     $ source build.sh
+
+Convertendo imagens
+-------------------
+
+O script espera imagens na extensão eps.
+
+Instalar o pacote ImageMagick para converter as imagens por linha de
+comando.
+
+Exemplo:
+
+    $ convert figs/EstudoMotor/ValoresNominaisVdVf/W.bmp -compress lzw
+eps2:figs/EstudoMotor/ValoresNominaisVdVf/W.eps
 
 Autores
 -------
