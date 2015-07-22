@@ -24,8 +24,7 @@ comando.
 
 Exemplo:
 
-    $ convert figs/EstudoMotor/ValoresNominaisVdVf/W.bmp -compress lzw
-eps2:figs/EstudoMotor/ValoresNominaisVdVf/W.eps
+    $ convert figs/EstudoMotor/ValoresNominaisVdVf/W.bmp -compress lzw eps2:figs/EstudoMotor/ValoresNominaisVdVf/W.eps
 
 Autores
 -------
