@@ -49,7 +49,7 @@ Máquinas de Corrente Contínua (CC) podem ser utilizadas com dois propósitos:
 Este trabalho apresenta o funcionamento de tais máquinas nestes dois modos.
 Adicionalmente, é projetado um controlador PID para um motor CC.
 
-\section{Modelo Teórico}
+\section{Modelo Teórico das Máquinas CC}
 
 A força eletromotriz é dada por:
 
@@ -142,7 +142,9 @@ T & Z s & 0,5 s
 \caption{Parâmetros do Trabalho}
 \end{table}
 
-\subsection{Parâmetros do Motor}
+\subsection{Parâmetros da Máquina}
+
+Foram também especificados parâmetros da máquina CC, são eles:
 
 \begin{table}[h]
 \centering
@@ -161,24 +163,34 @@ Constante de tempo [V/A(rad/s] & k = 0,265 \\
 Coeficiente de atrito [Nm/(rad/s)] & $ k_a = 0,8 \times10^{-3} $ \\
 Constante de tempo mecânica [s] & $ J/k_a = 5 $
 \end{tabular}
-\caption{Parâmetros do Motor}
+\caption{Parâmetros da Máquina CC}
 \end{table}
 
 \subsection{Estudo do Motor}
 
-Texto
+(i) Aplique um degrau de tensa¿o no campo e veja como a corrente responde (sem tensa¿o na armadura).
+(ii) Aplique um degrau de tensa¿o na armadura sem tensa¿o no campo.
+(iii) Com o campo nominal, aplique a tensa¿o nominal na armadura e veja a reposta da corrente ia, velocidade ¿ e tensa¿o de armadura ea.
+(iv) Confira a resposta para va¿rios ni¿veis de tensa¿o e veja se esta¿o coerentes e fisicamente corretas.
+(v) O sistema e¿ linear? (Essa parte, se for para o relato¿rio, deve ser resumida.)
 
 \subsection{Estudo do Gerador}
 
-Texto
+Considere que exista um torque fazendo o eixo dessa ma¿quina girar.
+Fac¿a va¿rios testes da resposta da tensa¿o gerada em func¿a¿o da tensa¿o de campo (de¿ uns degraus e veja a resposta no tempo).
+Confira o tempo de reposta.
 
-\subsection{Dinâmica do Motor}
+\subsection{Estudo da Dinâmica do Motor}
 
-Texto
+Fac¿a o diagrama de Bode para a resposta da posic¿a¿o do motor em func¿a¿o da tensa¿o usando a func¿a¿o de transfere¿ncia obtida do modelo da ma¿quina.
+Verifique por simulac¿a¿o no tempo, para alguns (5, esta¿ razoa¿vel) pontos, se o ganho e fase esta¿o corretos.
+Para isso assuma um ponto de operac¿a¿o em regime permanente e adicione um sinal senoidal sobre a tensa¿o CC de alimentac¿a¿o e mec¿a a amplitude e fase da resposta de posic¿a¿o.
+Qual e¿ a freque¿ncia de corte?
+Qual e¿ o ganho? (Esta parte deve ir para o relato¿rio).
 
-\subsection{Simulação do Motor}
+\subsection{Estudo de Alimentação do Motor}
 
-Texto
+Simular o motor alimentado por fonte de tensa¿o e por fonte de corrente em va¿rias condic¿o¿es.
 
 \section{Controlador para o Motor de Corrente Contínua}
 
