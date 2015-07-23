@@ -6,6 +6,7 @@
 \makeatother
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{morefloats}
 
 \begin{document}
 
@@ -120,15 +121,19 @@ Finalmente, o torque total é composto por:
 T_{total} = T_{eletrico} + T_{atrito} - T_{mecanico}
 \end{equation}
 
-\newpage
-
 \section{Máquina de Corrente Contínua}
 
 \subsection{Parâmetros do Trabalho}
 
-Foi especificado para este trabalho uma variável Z valendo a média do último dígito do DRE dos autores ou 5, se esta média for nula.
+A tarefa consiste em fazer o motor mover um bloco de massa X Kg
+de mover, inicialmente mover de +Y m no menor tempo possível,
+parar por um tempo T, mover-se de -Y m com velocidade constante
+a maior parte do tempo tal que o tempo do movimento seja da ordem do triplo
+do tempo do primeiro movimento, parar por um tempo T e mover-se novamente
+de +Y com aceleração em rampa desde zero até o valor máximo.
 
-A média do DRE dos autores deste trabalho é 0,5, logo temos:
+Foi especificado para este trabalho uma variável Z valendo a média
+do último dígito do DRE dos autores ou 5, se esta média for nula.
 
 \begin{table}[h]
 \centering
@@ -169,7 +174,86 @@ Constante de tempo mecânica [s] & $ J/k_a = 5 $
 
 \subsection{Estudo do Motor}
 
-(i) Aplique um degrau de tensão no campo e veja como a corrente responde (sem tensão na armadura).
+\begin{figure}[h]
+\centering
+\includegraphics[width=3in]{figs/LayoutMotor.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+No layout temos que a parte de cima do circuito corresponde à
+parcela dependente da tensão de campo enquanto a parte inferior
+corresponde à parcela que depende da tensão de armadura.
+
+Para esse estudo da máquina, primeiramente, iremos alterar os valores do raio
+da polia e a massa do peso para zero, manteremos a tensão de armadura em
+zero e aplicaremos degraus de variados valores na tensão de campo.
+
+\begin{figure}[h]
+\centering
+\includegraphics{figs/EstudoMotor/Vd0Vfvar/If.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics{figs/EstudoMotor/Vd0Vfvar/VelocidadeW.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics{figs/EstudoMotor/Vd0Vfvar/Ia.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+A partir dos gráficos, podemos ver que tanto a velocidade angular quanto a
+corrente de armadura são nulas.
+Isso se dá pelo fato de ambas as grandezas dependerem da tensão de armadura
+como visto nas equações (3) e (4) não será gerado nenhum torque elétrico já
+que, segundo a equação (10) e, aplicando a equação (2) em (1), vemos que a
+eletromotriz Ea também será nula.
+
+Enquanto isso as correntes If começam em zero e sobem durante aproximadamente
+5 segundos onde estabilizam.
+Esse resultado só depende da resistência e indutância Rf e Lf e da amplitude
+do degrau de tensão Vf.
+
+Em seguida, aplicaremos variados valores de tensão Vd e a tensão de campo Vf
+será mantida em zero.
+
+Da fórmula (5) temos que a corrente If só depende da tensão Vf, logo a
+corrente que passa nessa malha é nula:
+
+\begin{figure}[h]
+\centering
+\includegraphics{figs/EstudoMotor/Vf0Vdvar/If.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+Além disso, de acordo com fórmula (7), como Vf é nulo temos um torque nulo.
+Portanto W e teta serão nulos.
+
+\begin{figure}[h]
+\centering
+\includegraphics{figs/EstudoMotor/Vf0Vdvar/Ia.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics{figs/EstudoMotor/Vf0Vdvar/W.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+Como última análise simulamos o sistema com os valores nominais da tabela 1
+e observamos as seguintes formas de onda:
 
 \begin{figure}[h]
 \centering
@@ -178,18 +262,200 @@ Constante de tempo mecânica [s] & $ J/k_a = 5 $
 \label{label}
 \end{figure}
 
-(ii) Aplique um degrau de tensa¿o na armadura sem tensa¿o no campo.
-(iii) Com o campo nominal, aplique a tensa¿o nominal na armadura e veja a reposta da corrente ia, velocidade ¿ e tensa¿o de armadura ea.
-(iv) Confira a resposta para va¿rios ni¿veis de tensa¿o e veja se esta¿o coerentes e fisicamente corretas.
-(v) O sistema e¿ linear? (Essa parte, se for para o relato¿rio, deve ser resumida.)
+\begin{figure}[h]
+\centering
+\includegraphics{figs/EstudoMotor/ValoresNominaisVdVf/Ia.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics{figs/EstudoMotor/ValoresNominaisVdVf/If.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics{figs/EstudoMotor/ValoresNominaisVdVf/W.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+Observamos dessa vez que como há Vd e Vf conseguiremos obter tanto a
+corrente Ia quanto a corrente If que, de acordo com (10), criam um torque
+no motor.
+Esse torque induzido sobre a rotor que faz o motor girar aumentando sua
+velocidade angular ¿.
+
+Como a tensão Ea depende da velocidade ¿  (equação (1)) temos que Ea sobre
+ino intervalo aproximado de 1 segundo até alcançar seu valor máximo próximo
+de Vd após passar por um overshoot.
+Ao alcançar esse valor a corrente Ia se anula e isso elimina o torque
+que faz com que o rotor pare de variar a rotação e fique em uma velocidade
+constante.
 
 \subsection{Estudo do Gerador}
 
-Considere que exista um torque fazendo o eixo dessa ma¿quina girar.
-Fac¿a va¿rios testes da resposta da tensa¿o gerada em func¿a¿o da tensa¿o de campo (de¿ uns degraus e veja a resposta no tempo).
-Confira o tempo de reposta.
+\begin{figure}[h]
+\centering
+\includegraphics[width=3in]{figs/LayoutMotorModoGerador.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+Para as simulações em modo gerador aplicamos um torque fixo ao sistema.
+Além disso zeramos a tensão Vd e aplicamos múltiplos valores de Vf.
+
+\begin{figure}[h]
+\centering
+\includegraphics{figs/EstudoModoGerador/Torque.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics{figs/EstudoModoGerador/W.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics{figs/EstudoModoGerador/Ea.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics{figs/EstudoModoGerador/Ia.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics{figs/EstudoModoGerador/If.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics{figs/EstudoModoGerador/Theta.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+A teoria diz que ao induzirmos um torque mecânico no motor deve ser criado
+uma tensão Vd na armadura.
+Podemos observar esse comportamento na figura 10.
+Observamos que uma corrente no campo será gerada como observamos em uma
+das análises de modo motor.
+Além disso como temos uma corrente em If (gerada pela tensão Vf) e um torque
+que cria uma velocidade angular w, pela formula (3), temos
+que uma tensão eletromotriz Ea será gerada que por sua vez gera a corrente
+na armadura Ia.
 
 \subsection{Estudo da Dinâmica do Motor}
+
+Para uma análise da dinâmica de funcionamento deste motor, traçamos o diagrama
+de Bode da função de transferência $ \frac{\theta}{V_d} $:
+
+\begin{equation}
+\scriptstyle
+\frac{\phi}{V_d} = \frac{k_{campo}*I_f}{s*[s*J+MR^2)+K_a]*(s*L_a+R_a)}
+\end{equation}
+
+Como não conseguimos definir uma frequência de corte para o Diagrama de Bode
+acima criamos um diagrama que relaciona $ \frac{\theta}{Vd} $:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=3in]{figs/GraficoEnergiaConsumida.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=3in]{figs/GraficoIaMotorControlado.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=3in]{figs/GraficoWMotorControlado.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=3in]{figs/LayoutControle.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=3in]{figs/LayoutMotorTesteRaio.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=3in]{figs/graficoposicaoControlada.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=3in]{figs/BodeeRoot/rootW.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=3in]{figs/BodeeRoot/rootTheta.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=3in]{figs/BodeeRoot/rootalfa.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=3in]{figs/BodeeRoot/bodeW.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=3in]{figs/BodeeRoot/bodeTheta.eps}
+\caption{caption}
+\label{label}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=3in]{figs/BodeeRoot/bodealfa.eps}
+\caption{caption}
+\label{label}
+\end{figure}
 
 Fac¿a o diagrama de Bode para a resposta da posic¿a¿o do motor em func¿a¿o da tensa¿o usando a func¿a¿o de transfere¿ncia obtida do modelo da ma¿quina.
 Verifique por simulac¿a¿o no tempo, para alguns (5, esta¿ razoa¿vel) pontos, se o ganho e fase esta¿o corretos.
